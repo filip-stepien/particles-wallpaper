@@ -1,0 +1,91 @@
+{
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"backgroundcolor" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "Background Color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"linecolor" : 
+			{
+				"index" : 2,
+				"order" : 102,
+				"text" : "Line Color",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"numberofparticles" : 
+			{
+				"fraction" : false,
+				"index" : 3,
+				"max" : 1000,
+				"min" : 0,
+				"order" : 103,
+				"text" : "Number of particles",
+				"type" : "slider",
+				"value" : 100
+			},
+			"particlecolor" : 
+			{
+				"index" : 1,
+				"order" : 101,
+				"text" : "Particle Color",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"particleconnectingdistance" : 
+			{
+				"fraction" : false,
+				"index" : 6,
+				"max" : 1000,
+				"min" : 0,
+				"order" : 106,
+				"text" : "Particle connecting distance",
+				"type" : "slider",
+				"value" : 200
+			},
+			"particleradius" : 
+			{
+				"fraction" : false,
+				"index" : 4,
+				"max" : 100,
+				"min" : 0,
+				"order" : 104,
+				"text" : "Particle radius",
+				"type" : "slider",
+				"value" : 5
+			},
+			"particlespeed" : 
+			{
+				"fraction" : true,
+				"index" : 5,
+				"max" : 10,
+				"min" : 0,
+				"order" : 105,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "Particle speed",
+				"type" : "slider",
+				"value" : 1
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.gif",
+	"tags" : [ "Abstract" ],
+	"title" : "Particles",
+	"type" : "web",
+	"version" : 0
+}
