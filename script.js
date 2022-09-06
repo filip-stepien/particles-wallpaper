@@ -6,7 +6,7 @@ let options = {
     canvasBackgroundColor: '0 0 0',
     particleColor: '255 255 255',
     lineColor: '255 255 255',
-    fps: 200
+    fps: 240
 }
 
 class Canvas {
@@ -22,6 +22,7 @@ class Canvas {
 
         window.wallpaperPropertyListener = {
             applyUserProperties: properties => {
+                console.log(properties)
                 if(properties.backgroundcolor) options.canvasBackgroundColor = rgbString(properties.backgroundcolor.value);
                 if(properties.particlecolor) options.particleColor = rgbString(properties.particlecolor.value);
                 if(properties.linecolor) options.lineColor = rgbString(properties.linecolor.value);
@@ -131,9 +132,11 @@ class ParticleManager extends Canvas {
     }
 
     render() {
-        this.particles.forEach(particle => particle.calculateDistance(this.particles));
-        this.particles.forEach(particle => particle.render());
-        this.particles.forEach(particle => particle.connect(this.particles));
+        this.particles.forEach(particle => {
+            particle.calculateDistance(this.particles)
+            particle.render()
+            particle.connect(this.particles)
+        });
     }
 }
 
