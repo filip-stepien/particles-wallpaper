@@ -6,7 +6,7 @@ let options = {
     canvasBackgroundColor: '0 0 0',
     particleColor: '255 255 255',
     lineColor: '255 255 255',
-    fps: 200
+    fps: 240
 }
 
 class Canvas {
@@ -76,7 +76,7 @@ class Particle extends Canvas {
 
     connect(particles) {
         particles.forEach(particle => {
-            if(this.distance[particle.id] < options.lineMaxLength && !particle.connected){
+            if(this.distance[particle.id] < options.lineMaxLength && !particle.connected && !this.connected){
                 const opacity = 1 - (this.distance[particle.id]/options.lineMaxLength);
                 this.ctx.strokeStyle = rgb(options.lineColor, opacity);
                 this.ctx.beginPath();
@@ -131,9 +131,11 @@ class ParticleManager extends Canvas {
     }
 
     render() {
-        this.particles.forEach(particle => particle.calculateDistance(this.particles));
-        this.particles.forEach(particle => particle.render());
-        this.particles.forEach(particle => particle.connect(this.particles));
+        this.particles.forEach(particle => {
+            particle.calculateDistance(this.particles)
+            particle.render()
+            particle.connect(this.particles)
+        });
     }
 }
 
