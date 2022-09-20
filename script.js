@@ -53,7 +53,6 @@ class Particle extends Canvas {
         this.id = id;
         this.distance = [];
         this.closest = null;
-        this.connected = false;
     }
 
     move() {
@@ -76,17 +75,13 @@ class Particle extends Canvas {
 
     connect(particles) {
         particles.forEach(particle => {
-            if(this.distance[particle.id] < options.lineMaxLength && !particle.connected && !this.connected){
+            if(this.distance[particle.id] < options.lineMaxLength){
                 const opacity = 1 - (this.distance[particle.id]/options.lineMaxLength);
                 this.ctx.strokeStyle = rgb(options.lineColor, opacity);
                 this.ctx.beginPath();
                 this.ctx.moveTo(this.x, this.y);
                 this.ctx.lineTo(particle.x, particle.y);
                 this.ctx.stroke();
-                particle.connected = true;
-            }
-            else {
-                particle.connected = false;
             }
         });
     }
